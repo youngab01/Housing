@@ -13,7 +13,7 @@ function Navigation() {
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/about">About Us</Nav.Link>
             <NavDropdown 
-              title={<span>State of services <i className="fa fa-chevron-down ms-1" style={{fontSize: '0.7rem'}}></i></span>} 
+              title={<span>State of services </span>} 
               id="basic-nav-dropdown"
               // ❌ Removed: className="dropdown-menu-custom"
             >
