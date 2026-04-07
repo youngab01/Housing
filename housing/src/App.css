@@ -1,0 +1,517 @@
+/* Global Styles */
+:root {
+  --primary-green: rgb(10, 37, 10);
+  --secondary-green: rgb(85, 107, 85);
+  --light-green: rgb(109, 116, 109);
+  --accent-green: yellowgreen;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  overflow-x: hidden;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+/* Navigation Styles */
+.navbar-custom {
+  background-color: var(--primary-green) !important;
+  padding: 0.75rem 0;
+}
+
+.navbar-custom .navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+
+.navbar-custom .nav-link {
+  color: #fff !important;
+  font-size: 0.9rem;
+  padding: 0.75rem 1rem !important;
+  transition: all 0.3s ease;
+}
+
+.navbar-custom .nav-link:hover {
+  font-size: 0.95rem;
+}
+
+.dropdown-menu-custom {
+  background-color: #fff;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.dropdown-menu-custom .dropdown-item {
+  color: var(--light-green);
+  padding: 0.75rem 1.5rem;
+}
+
+.dropdown-menu-custom .dropdown-item:hover {
+  color: var(--secondary-green);
+  background-color: #f8f9fa;
+}
+
+/* Home Page */
+.hero-section {
+  background: linear-gradient(rgba(16, 187, 16, 0.6), rgba(16, 187, 16, 0.6)), 
+              url('/images/hero-background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: calc(100vh - 76px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-content h1 {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+  color: #fff;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-btn {
+  margin-top: 2rem;
+  background: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  padding: 0.75rem 2.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hero-btn:hover {
+  background-color: #fff;
+  color: var(--light-green);
+}
+
+/* Services Page */
+.services-header {
+  color: var(--secondary-green);
+  font-size: 2rem;
+  font-weight: 300;
+  text-align: center;
+  padding: 2rem 0;
+  text-transform: capitalize;
+}
+
+.filter-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.filter-btn {
+  padding: 0.5rem 1.25rem;
+  border: 2px solid var(--secondary-green);
+  background: transparent;
+  color: var(--secondary-green);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background-color: var(--secondary-green);
+  color: #fff;
+}
+
+/* Property Cards */
+.property-grid {
+  padding: 0 2rem 3rem;
+}
+
+.property-card-wrapper {
+  position: relative;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.property-card-wrapper img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.property-card-wrapper:hover img {
+  transform: scale(1.05);
+}
+
+.property-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.property-overlay h2 {
+  color: #fff;
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+
+/* Property Detail Pages */
+.property-detail-card {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 992px) {
+  .property-detail-card {
+    flex-direction: row;
+  }
+}
+
+.property-image {
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .property-image {
+    width: 50%;
+  }
+}
+
+.property-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 400px;
+}
+
+.property-info {
+  width: 100%;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+}
+
+@media (min-width: 992px) {
+  .property-info {
+    width: 50%;
+  }
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  font-size: 0.875rem;
+  margin-right: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.badge-active {
+  background-color: rgb(54, 221, 54);
+}
+
+.badge-sale {
+  background-color: rgb(77, 77, 155);
+}
+
+.property-info h3 {
+  color: #fff;
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.property-info .price {
+  color: #fff;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.property-info p {
+  color: #fff;
+  font-size: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.contact-agent-btn {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  border-radius: 4px;
+}
+
+/* About Page */
+.about-section {
+  padding: 3rem 0;
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .about-content {
+    flex-direction: row;
+  }
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h3 {
+  color: var(--secondary-green);
+  font-size: 1.75rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem;
+}
+
+.about-text p {
+  color: var(--secondary-green);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Team Page */
+.team-section {
+  padding: 3rem 0;
+}
+
+.team-header {
+  text-align: center;
+  color: var(--secondary-green);
+  margin-bottom: 3rem;
+}
+
+.team-header h1 {
+  font-weight: 300;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.team-header h2 {
+  font-weight: 100;
+  font-size: 1.1rem;
+}
+
+.team-card {
+  background-color: whitesmoke;
+  border: 5px solid whitesmoke;
+  border-radius: 8px;
+  padding: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 1.5rem;
+}
+
+.team-card h1 {
+  color: var(--secondary-green);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.team-card h3 {
+  color: var(--secondary-green);
+  font-size: 1rem;
+  font-weight: 100;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.team-card p {
+  color: var(--secondary-green);
+  font-style: italic;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--secondary-green);
+}
+
+/* Contact Page */
+.contact-section {
+  padding: 3rem 0;
+}
+
+.contact-header {
+  text-align: center;
+  color: var(--secondary-green);
+  margin-bottom: 3rem;
+}
+
+.contact-header h1 {
+  font-weight: 200;
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+
+.contact-header p {
+  font-weight: 100;
+  font-size: 1.1rem;
+}
+
+.contact-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+@media (min-width: 992px) {
+  .contact-content {
+    flex-direction: row;
+  }
+}
+
+.contact-info h2 {
+  color: var(--secondary-green);
+  font-size: 1.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-info p {
+  color: var(--secondary-green);
+  text-align: justify;
+  font-size: 1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.contact-details p {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.contact-form .form-control {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  border: 1px solid #e6dada;
+}
+
+.contact-form .form-control:focus {
+  border-color: blue;
+  box-shadow: none;
+}
+
+.submit-btn {
+  background-color: var(--secondary-green);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 2rem;
+  width: 100%;
+  max-width: 200px;
+}
+
+.submit-btn:hover {
+  background-color: rgb(59, 59, 59);
+}
+
+/* Footer */
+.footer-custom {
+  background-color: var(--primary-green);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.footer-custom p {
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.footer-custom i {
+  color: var(--accent-green);
+  font-style: normal;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1rem;
+  }
+  
+  .navbar-custom .navbar-brand {
+    font-size: 1.1rem;
+    margin-left: 0.5rem;
+  }
+  
+  .filter-tabs {
+    padding: 0 1rem;
+  }
+  
+  .property-card-wrapper img {
+    height: 300px;
+  }
+  
+  .property-info .price {
+    font-size: 1.75rem;
+  }
+}
